@@ -230,6 +230,7 @@ class CreateStoryLayerThumbnailTask(Task):
             print(e)
             print traceback.format_exc()
             self.retry(max_retries=5, countdown=2) # retry in 2 seconds
+            raise
 
 # convenience method (used by geonode) to start (via celery) the
 # thumbnail generation task.
